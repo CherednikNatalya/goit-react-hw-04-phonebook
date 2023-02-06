@@ -4,7 +4,7 @@ import css from './Form.module.css';
 import { PropTypes } from 'prop-types';
 
 export const Form =({onSubmitForm}) => {
-  const [name, setName] = useState('')
+ const [name, setName] = useState('')
  const [number, setNumber] = useState('')
 
   const nameId = nanoid()
@@ -16,7 +16,7 @@ export const Form =({onSubmitForm}) => {
       case 'name':
         setName(value);
         break;
-  
+        
         case 'number':
         setNumber(value);
         break;
@@ -24,11 +24,11 @@ export const Form =({onSubmitForm}) => {
     console.log('//////')
     }
   };
+ 
 
      const handleSubmit = event => {
         event.preventDefault()
-        const { name, number } = this.state;
-        onSubmitForm({ name, number });
+        onSubmitForm({name, number});
         setName({name:''})
         setNumber({number:''})
     }
