@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { useState } from 'react';
 import { nanoid } from 'nanoid'
 
 import {Section} from './Section/Section'
@@ -6,48 +6,46 @@ import {Form} from './Form/Form'
 import {ContactsList} from './User/ContactsList'
 import {FilterByName} from './FilterByName/FilterByName'
 
-export class App extends Component {
- 
-  state = {
-    contacts: [],
-    filter: '',
-    name: '',
-    number: ''
-  }
+export const  App =() => {
+ const [name, setName] = useState('')
+ const [number, setNumber] = useState('')
+ const [filter, setFilter] = useState('')
+ const [contacts, setContacts] = useState([])
 
+//  const handleCha
 
-  componentDidUpdate (prevProps, prevState) {
-    if (this.state.contacts.length !== prevState.contacts.length){
-      localStorage.setItem('contacts' , JSON.stringify(this.state.contacts))
-    }
-  }
+  // componentDidUpdate (prevProps, prevState) {
+  //   if (this.state.contacts.length !== prevState.contacts.length){
+  //     localStorage.setItem('contacts' , JSON.stringify(this.state.contacts))
+  //   }
+  // }
 
-  componentDidMount () {
-    const contacts = localStorage.getItem('contacts')
-    const parseContacts = JSON.parse(contacts)
+  // componentDidMount () {
+  //   const contacts = localStorage.getItem('contacts')
+  //   const parseContacts = JSON.parse(contacts)
 
-    if (parseContacts){
-      this.setState({contacts: parseContacts})
-    }
-  }
+  //   if (parseContacts){
+  //     this.setState({contacts: parseContacts})
+  //   }
+  // }
 
 
 
-  isContactInState = ({ name, number }) =>
-  !!this.state.contacts.filter(({ name: prevName, number: prevNumber }) => {
-    return prevName === name && prevNumber === number;
-  }).length;
+  // isContactInState = ({ name, number }) =>
+  // !!this.state.contacts.filter(({ name: prevName, number: prevNumber }) => {
+  //   return prevName === name && prevNumber === number;
+  // }).length;
 
-handleSubmitForm = ({ name, number }) => {
-  if (this.isContactInState({ name, number })) {
-    alert('Contact is in phonebook');
-    return;
-  }
+// handleSubmitForm = ({ name, number }) => {
+//   if (this.isContactInState({ name, number })) {
+//     alert('Contact is in phonebook');
+//     return;
+//   }
 
-  this.setState(({ contacts: prevContacts }) => ({
-    contacts: [...prevContacts, { id: nanoid(), name, number }],
-  }));
-};
+//   this.setState(({ contacts: prevContacts }) => ({
+//     contacts: [...prevContacts, { id: nanoid(), name, number }],
+//   }));
+// };
 
 
 
@@ -68,20 +66,20 @@ handleDeleteContact = id => {
   }));
 };
 
-  render () {
 
-    const { contacts, filter } = this.state;
-const normalizedFilter = this.filterNormalize(filter);
-const contactsToDisplay = this.contactListToDisplay(
-  contacts,
-  normalizedFilter
-);
+
+//     const { contacts, filter } = this.state;
+// const normalizedFilter = this.filterNormalize(filter);
+// const contactsToDisplay = this.contactListToDisplay(
+//   contacts,
+//   normalizedFilter
+// );
     
       return (
     <>
     <Section>
     <Form 
-    onSubmitForm={this.handleSubmitForm}/>
+    onSubmitForm={handleSubmitForm}/>
     </Section>
 
     <Section>
@@ -95,7 +93,7 @@ const contactsToDisplay = this.contactListToDisplay(
 </>
   );
   };
-};
+
 
 
 
