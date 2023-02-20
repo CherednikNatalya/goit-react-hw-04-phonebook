@@ -29,8 +29,8 @@ export const Form =({onSubmitForm}) => {
      const handleSubmit = event => {
         event.preventDefault()
         onSubmitForm(name, number);
-        setName({name:''})
-        setNumber({number:''})
+        setName(name:'')
+        setNumber(number:'')
     }
 
         return(
