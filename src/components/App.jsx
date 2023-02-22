@@ -9,9 +9,6 @@ import {FilterByName} from './FilterByName/FilterByName'
 
 
   export const App =() => {
- 
-    // const [name, setName] = useState('')
-    // const [number, setNumber] = useState('')
     const [filter, setFilter] = useState('')
     const [contacts, setContacts] = useState(()=> {
      return JSON.parse(localStorage.getItem('contacts')) || []})

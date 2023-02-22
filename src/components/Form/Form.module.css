@@ -1,9 +1,27 @@
 .formStyle {
     display: flex;
     flex-direction: column;
-    border: 2px solid grey;
+    border: 2px solid rgb(87, 160, 180);
+    border-radius: 10px;
     padding: 20px;
     width: 300px;
+  }
+  
+  .title {
+margin-bottom: 10px;
+margin-top: 0;
+font-family: "Roboto", sans-serif;
+font-style: 20px;
+    font-weight: 600;
+    font-size: 22px;
+  }
+  .text {
+    margin: 0;
+    margin-bottom: 10px;
+font-family: "Roboto", sans-serif;
+/* font-style: 20px; */
+    font-weight: 400;
+    font-size: 20px;
   }
   
   .labelStyle {
@@ -19,7 +37,8 @@
     margin-left: -3px;
     height: 20px;
     font-size: 18px;
-    margin-bottom: 20px;
+    border-radius: 5px;
+    margin-bottom: 5px;
   }
   
   .inputStyle:hover,
@@ -37,5 +56,10 @@
   
   .addButton {
     width: 100px;
+    margin-top: 10px;
+    background-color: rgb(87, 160, 180);
+    border: 2px solid rgb(109, 102, 102);
+   border-radius: 5px;
+  padding: 5px;
   }
   

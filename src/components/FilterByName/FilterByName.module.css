@@ -1,8 +1,26 @@
+.formStyle {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(87, 160, 180);
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
 .labelStyle {
     font-style: 20px;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 20px;
     margin: 0;
+  }
+
+  .text {
+    margin: 0;
+    margin-bottom: 10px;
+font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
   }
   
   .inputStyle {
@@ -12,6 +30,7 @@
     height: 20px;
     font-size: 18px;
     margin-bottom: 20px;
+   border-radius: 5px;
   }
   
   .inputStyle:hover,

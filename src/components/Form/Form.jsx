@@ -25,7 +25,6 @@ export const Form =({onSubmitForm}) => {
     }
   };
  
-
      const handleSubmit = event => {
         event.preventDefault()
         onSubmitForm(name, number);
@@ -34,11 +33,11 @@ export const Form =({onSubmitForm}) => {
     }
 
         return(
-<form onSubmit={handleSubmit}>
-    <h2>Phonebook</h2>
-    <div className="mb-3">
+<form className={css.formStyle} onSubmit={handleSubmit}>
+    <h2 className={css.title}>Phonebook</h2>
+    <div >
           <label htmlFor={nameId} className={css.labelStyle}>
-            <p>Name</p>
+            <p className={css.text}>Name</p>
           </label>
         <input
         className={css.inputStyle}
@@ -53,11 +52,12 @@ export const Form =({onSubmitForm}) => {
 />
 </div>
 
-<div className="mb-3">
+<div >
           <label htmlFor={numberId} className={css.labelStyle}>
-            <p>Number</p>
+            <p className={css.text}>Number</p>
           </label>
         <input
+         className={css.inputStyle}
         id={numberId}
         type="tel"
   value={number}

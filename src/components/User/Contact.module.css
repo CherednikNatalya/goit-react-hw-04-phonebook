@@ -2,4 +2,20 @@
     display:flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
+
+.addButton {
+    width: 80px;
+    background-color: rgb(87, 160, 180);
+    border: 2px solid rgb(109, 102, 102);
+   border-radius: 5px;
+  padding: 5px;
+  }
+  .title {
+    margin: 0;
+font-family: "Roboto", sans-serif;
+/* font-style: 20px; */
+    font-weight: 400;
+    font-size: 20px;
+  }
